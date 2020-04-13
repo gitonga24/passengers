@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" th:href="@{/style.css}">
+
+    <title>Flights Available</title>
+</head>
+
+<body>
+
+    <header>
+        <h3> </h3>
+    </header>
+    <main>
+
+        <h2> Flights Currently Available </h2>
+
+
+
+
+
+<table>
+    <thead>
+        <tr>
+            <th> Flights Name </th>
+            <th> Seats Available </th>
+            <th> Number of Passengers </th>
+         
+        </tr>
+    </thead>
+    <tbody>
+    <tr th:if="${allFlights.empty}">
+            <td colspan="2"> No Flights Available </td>
+        </tr>
+        <tr th:each="flight : ${allFlights}">
+            <td><span> <a th:href="@{/flight(id=${flight.id})}" th:text="${flight.flightName}"></a> </span></td>
+            <td><span th:text="${flight.seats}"> Seats Available </span></td>
+            <td><span th:text="${flight.getPassengerCount()}"> Passenger Count </span></td>
+           
+        </tr>
+    </tbody>
+</table>
+
+
+
+
+
+
+      
+
+
+
+
+
+
+    </main>
+    
+    </body>

@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" th:href="@{/style.css}">
+
+
+    <title th:text="${flight.flightName}"></title>
+</head>
+
+<body>
+
+    <header>
+
+
+    </header>
+
+    <main>
+
+        <h3 th:text="${flight.getFlightName()}"></h3>
+		<h3 th:text="${flight.getSeats()}"></h3>
+		
+		<h3 th:text="${flight.getPassengerCount()}"></h3>
+
+		
+
+	<li th:each="passenger: ${flight.passengers}">
+                <a th:href="@{/passenger(id=${passenger.id})}" th:text="${passenger.firstName}"></a>
+            </li>
+            
+          
+          
+        
+
+
+
+
+
+
+    </main>
+
+
+
+
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <nav>Fresh Faces Beauty LLC </nav>
+
+
+
+    <h4><a href="/allProducts"> Home </a></h4>
+</body>
+<footer>
+    <small>&copy; Fresh Faces Beauty LLC </small>
+</footer>
+
+
+
+</html>

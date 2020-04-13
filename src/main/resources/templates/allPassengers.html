@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" th:href="@{/style.css}">
+
+    <title>Flights Passengers</title>
+</head>
+
+<body>
+
+    <header>
+        <h3> </h3>
+    </header>
+    <main>
+
+        <h2> Passengers On Board </h2>
+
+
+
+
+
+<table>
+    <thead>
+        <tr>
+            <th> Passenger Last Name </th>
+            <th> Passenger First Name </th>
+            <th> Number of Checked Bags </th>
+            <th> Flight </th>
+         
+        </tr>
+    </thead>
+    <tbody>
+    <tr th:if="${allPassengers.empty}">
+            <td colspan="3"> No Passengers Available </td>
+        </tr>
+        <tr th:each="passenger : ${allPassengers}">
+            <td><span> <a th:href="@{/passenger(id=${passenger.id})}" th:text="${passenger.lastName}"></a> </span></td>
+            <td><span th:text="${passenger.firstName}"> First Name </span></td>
+            <td><span th:text="${passenger.checkedBags}"> Checked Bags </span></td>
+            <td><span th:text="${passenger.getFlightName()}"> Checked Bags </span></td>
+           
+        </tr>
+    </tbody>
+</table>
+
+
+
+
+
+
+      
+
+
+
+
+
+
+    </main>
+    
+    </body>

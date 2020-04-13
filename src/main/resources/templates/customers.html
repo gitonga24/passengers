@@ -1,0 +1,54 @@
+
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" th:href="@{/style.css}">
+
+    <title>Home - A List of All Available Products</title>
+</head>
+
+<body>
+
+    <header>
+        <h3> </h3>
+    </header>
+    <main>
+
+        <h2>Customers at glance </h2>
+        <section class="image-carousel">
+            <img id="slide">
+        </section>
+
+
+        <section id="products">
+
+
+
+            <div class="product-links" th:each="customer: ${customers}">
+                <a th:href="@{/customer(id=${customer.id})}" th:text="${customer.lastName}"></a>
+            </div>
+
+			
+			
+			<ul
+			
+			th:each="customer: ${customers}"> 
+			<li th:text="${customer.firstName}"></li>
+			
+			</ul>
+
+
+        </section>
+
+
+
+
+
+    </main>
+
+
